@@ -4,70 +4,107 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:visibility="visible"
     tools:context="com.example.dcaceres.project.MainActivity">
 
-    <TextView
-        android:id="@+id/mainTv_titulo"
-        android:layout_width="125dp"
-        android:layout_height="38dp"
-        android:layout_marginBottom="387dp"
-        android:layout_marginLeft="8dp"
-        android:text="Contactos"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.486"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+    <RelativeLayout
+        android:layout_width="382dp"
+        android:layout_height="508dp"
+        tools:layout_editor_absoluteY="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_editor_absoluteX="-6dp">
 
-    <TextView
-        android:id="@+id/mainTv_email"
-        android:layout_width="136dp"
-        android:layout_height="41dp"
-        android:text="email "
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="172dp" />
+        <TextView
+            android:id="@+id/mainTv_titulo"
+            android:layout_width="125dp"
+            android:layout_height="38dp"
+            android:text="Contactos"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.486"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="24dp" />
 
-    <EditText
-        android:id="@+id/mainEt_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        tools:layout_editor_absoluteX="153dp"
-        tools:layout_editor_absoluteY="172dp" />
+        <TextView
+            android:id="@+id/mainTv_email"
+            android:layout_width="136dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="30dp"
+            android:text="email "
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="172dp"
+            android:layout_below="@+id/mainTv_titulo"
+            android:layout_toLeftOf="@+id/mainEt_email" />
 
-    <TextView
-        android:id="@+id/mainTv_password"
-        android:layout_width="137dp"
-        android:layout_height="44dp"
-        android:text="password"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="233dp" />
+        <EditText
+            android:id="@+id/mainEt_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            tools:layout_editor_absoluteX="153dp"
+            tools:layout_editor_absoluteY="172dp"
+            android:layout_alignTop="@+id/mainTv_email"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="11dp"
+            android:layout_marginEnd="11dp" />
 
-    <EditText
-        android:id="@+id/mainEt_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPassword"
-        tools:layout_editor_absoluteX="153dp"
-        tools:layout_editor_absoluteY="234dp" />
+        <TextView
+            android:id="@+id/mainTv_password"
+            android:layout_width="137dp"
+            android:layout_height="44dp"
+            android:text="password"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="233dp"
+            android:layout_alignTop="@+id/mainEt_password"
+            android:layout_toLeftOf="@+id/mainEt_email"
+            android:layout_toStartOf="@+id/mainEt_email" />
 
-    <Button
-        android:id="@+id/mainBt_login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="log in"
-        tools:layout_editor_absoluteX="64dp"
-        tools:layout_editor_absoluteY="339dp" />
+        <EditText
+            android:id="@+id/mainEt_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPassword"
+            tools:layout_editor_absoluteX="153dp"
+            tools:layout_editor_absoluteY="234dp"
+            android:layout_marginTop="29dp"
+            android:layout_below="@+id/mainEt_email"
+            android:layout_toRightOf="@+id/mainTv_password"
+            android:layout_toEndOf="@+id/mainTv_password" />
 
-    <Button
-        android:id="@+id/mainBt_sigin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SIGN IN"
-        tools:layout_editor_absoluteX="226dp"
-        tools:layout_editor_absoluteY="339dp" />
+        <Button
+            android:id="@+id/mainBt_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="log in"
+            tools:layout_editor_absoluteX="64dp"
+            tools:layout_editor_absoluteY="339dp"
+            android:layout_marginLeft="39dp"
+            android:layout_marginStart="39dp"
+            android:layout_alignBaseline="@+id/mainBt_sigin"
+            android:layout_alignBottom="@+id/mainBt_sigin"
+            android:layout_toRightOf="@+id/mainBt_sigin"
+            android:layout_toEndOf="@+id/mainBt_sigin" />
+
+        <Button
+            android:id="@+id/mainBt_sigin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SIGN IN"
+            tools:layout_editor_absoluteX="226dp"
+            tools:layout_editor_absoluteY="339dp"
+            android:layout_below="@+id/mainTv_password"
+            android:layout_alignRight="@+id/mainTv_password"
+            android:layout_alignEnd="@+id/mainTv_password"
+            android:layout_marginTop="88dp" />
+
+    </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>
