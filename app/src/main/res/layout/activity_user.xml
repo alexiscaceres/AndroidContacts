@@ -14,72 +14,90 @@
         tools:layout_editor_absoluteY="8dp">
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/userIV_foto"
             android:layout_width="386dp"
-            android:layout_height="99dp"
-            android:layout_weight="0.00"
+            android:layout_height="74dp"
             app:srcCompat="@mipmap/ic_launcher" />
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/userET_nombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.00"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Name" />
+            android:text="nombre" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/userET_ocupacion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.00"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Name" />
+            android:text="ocupacion" />
 
         <EditText
-            android:id="@+id/editText3"
+            android:id="@+id/userET_direccion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.00"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Name" />
+            android:text="dirección" />
 
         <EditText
-            android:id="@+id/editText4"
+            android:id="@+id/userET_ciudad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.00"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Name" />
+            android:text="ciudad" />
 
         <EditText
-            android:id="@+id/editText5"
+            android:id="@+id/userET_telefono"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.00"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Name" />
+            android:text="telefono" />
 
         <EditText
-            android:id="@+id/editText6"
+            android:id="@+id/userET_correo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.00"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Name" />
+            android:text="correo" />
 
         <EditText
-            android:id="@+id/editText7"
+            android:id="@+id/userET_descripcion"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="97dp"
             android:ems="10"
             android:inputType="textMultiLine" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.00"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/userBT_agregar"
+                android:layout_width="186dp"
+                android:layout_height="wrap_content"
+                android:text="Agregar Usuario" />
+
+            <Button
+                android:id="@+id/userBT_generarQR"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Generar QR" />
+        </LinearLayout>
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
