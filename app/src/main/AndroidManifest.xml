@@ -3,6 +3,7 @@
     package="com.example.dcaceres.project">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <user-permission android:name="android.permission.CAMERA" />
 
     <application
@@ -20,7 +21,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".UserActivity" />
-        <activity android:name=".ScannerActivity"></activity>
+        <activity android:name=".QRActivity" />
+        <activity android:name=".ContactosActivity" />
+        <activity android:name=".ContactoActivity"></activity>
     </application>
 
 </manifest>

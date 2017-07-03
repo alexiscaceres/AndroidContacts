@@ -8,7 +8,7 @@ package utils;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class JsonMessage {
+public class ResponseLogin {
 
     @SerializedName("estado")
     @Expose
@@ -17,8 +17,7 @@ public class JsonMessage {
     @Expose
     private String mensaje;
 
-    public JsonMessage(){
-
+    public ResponseLogin(){
     }
 
     public Integer getEstado() {
