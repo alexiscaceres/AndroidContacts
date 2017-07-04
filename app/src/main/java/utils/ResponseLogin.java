@@ -35,5 +35,4 @@ public class ResponseLogin {
     public void setMensaje(String mensaje) {
         this.mensaje = mensaje;
     }
-
 }

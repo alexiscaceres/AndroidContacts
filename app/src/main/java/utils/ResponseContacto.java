@@ -1,26 +1,26 @@
 package utils;
 
 /**
- * Created by doris on 3/07/2017.
+ * Created by doris on 30/06/2017.
  */
 
 import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import model.Contactos;
+import model.Contacto;
 
-public class ResponseContactos {
+public class ResponseContacto {
 
     @SerializedName("contactos")
     @Expose
-    private List<Contactos> contactos = null;
+    private List<Contacto> contactos = null;
 
-    public List<Contactos> getContactos() {
+    public List<Contacto> getContactos() {
         return contactos;
     }
 
-    public void setContactos(List<Contactos> contactos) {
+    public void setContactos(List<Contacto> contactos) {
         this.contactos = contactos;
     }
 
