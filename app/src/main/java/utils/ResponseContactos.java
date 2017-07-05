@@ -8,19 +8,20 @@ import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import model.Contacto;
 import model.Contactos;
 
 public class ResponseContactos {
 
     @SerializedName("contactos")
     @Expose
-    private List<Contactos> contactos = null;
+    private List<Contacto> contactos = null;
 
-    public List<Contactos> getContactos() {
+    public List<Contacto> getContactos() {
         return contactos;
     }
 
-    public void setContactos(List<Contactos> contactos) {
+    public void setContactos(List<Contacto> contactos) {
         this.contactos = contactos;
     }
 

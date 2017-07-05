@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import java.util.List;
+
+import model.Contacto;
 import model.Contactos;
 import utils.AdapterContacto;
 import utils.AsyncTaskContactos;
@@ -15,7 +17,8 @@ import utils.AsyncTaskContactos;
 public class ContactosActivity extends AppCompatActivity {
 
     private ListView lista;
-    private List<Contactos> contactos = null;
+    private Integer idUsuario;
+    private List<Contacto> contactos = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +27,7 @@ public class ContactosActivity extends AppCompatActivity {
         setContentView(R.layout.activity_contactos);
 
         //obtener id de usuario logueado
-        final Integer idUsuario = getIntent().getIntExtra("idUsuario", 0);
+        idUsuario = getIntent().getIntExtra("idUsuario", 0);
         requestApiGetContacts(idUsuario);
 
         lista = (ListView)findViewById(R.id.contactosLV_lista);
@@ -33,7 +36,7 @@ public class ContactosActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Contactos contacto = contactos.get(position);
+                Contacto contacto = contactos.get(position);
                 Intent toContactoActivity = new Intent( ContactosActivity.this, ContactoActivity.class );
                 toContactoActivity.putExtra("idUsuario", idUsuario);
                 toContactoActivity.putExtra("idContacto", contacto.getIdUsuario2());
@@ -42,7 +45,8 @@ public class ContactosActivity extends AppCompatActivity {
         });
     }
 
-    public void setContactos(List<Contactos> contactos){
+    public void setContactos(List<Contacto> contactos){
+        Log.i("Request", "Set Contactos");
         this.contactos = contactos;
     }
 

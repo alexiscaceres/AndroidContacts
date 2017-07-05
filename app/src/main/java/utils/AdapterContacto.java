@@ -14,15 +14,17 @@ import android.widget.TextView;
 import com.example.dcaceres.project.R;
 
 import java.util.List;
+
+import model.Contacto;
 import model.Contactos;
 
 /**
  * Created by doris on 30/06/2017.
  */
 
-public class AdapterContacto extends ArrayAdapter<Contactos> {
+public class AdapterContacto extends ArrayAdapter<Contacto> {
 
-    public AdapterContacto(Context context, List<Contactos> contactos) {
+    public AdapterContacto(Context context, List<Contacto> contactos) {
         super(context, R.layout.layout_contacto, contactos);
     }
 
@@ -38,7 +40,7 @@ public class AdapterContacto extends ArrayAdapter<Contactos> {
         TextView nombres = (TextView)vista.findViewById(R.id.contactoTV_nombres);
         TextView ocupacion = (TextView)vista.findViewById(R.id.contactoTV_ocupacion);
 
-        Contactos contacto = getItem(position);
+        Contacto contacto = getItem(position);
         nombres.setText(contacto.getPrimerNombre() + " " + contacto.getSegundoNombre() );
         ocupacion.setText(contacto.getIdUsuario2());
         return  vista;
