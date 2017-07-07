@@ -35,7 +35,8 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-public class UserActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler{
+public class UserActivity extends AppCompatActivity //implements ZXingScannerView.ResultHandler
+{
 
     private EditText etCorreo;
     private EditText etCiudad;
@@ -114,9 +115,9 @@ public class UserActivity extends AppCompatActivity implements ZXingScannerView.
                         crearUsuario();
                         break;
 
-                    default:
-                        escanearQR();
-                        break;
+//                    default:
+//                        escanearQR();
+//                        break;
 
                 }
 
@@ -125,58 +126,58 @@ public class UserActivity extends AppCompatActivity implements ZXingScannerView.
 
     }
 
-    @Override
-    public void handleResult(Result result) {
+//    @Override
+//    public void handleResult(Result result) {
+//
+//        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//        builder.setTitle("Codigo QR");
+//        builder.setMessage(result.getText());
+//        AlertDialog alertDialog = builder.create();
+//        alertDialog.show();
+//        scannerView.resumeCameraPreview(this);
+//
+//    }
+//
+//    @Override
+//    protected void onPause() {
+//        super.onPause();
+//        scannerView.stopCamera();
+//    }
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Codigo QR");
-        builder.setMessage(result.getText());
-        AlertDialog alertDialog = builder.create();
-        alertDialog.show();
-        scannerView.resumeCameraPreview(this);
+//    @RequiresApi(api = Build.VERSION_CODES.M)
+//    private void checkPermission(){
+//
+//        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+//
+//            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CAMERA)) {
+//                Toast.makeText(this, "Permiso negado anteriormente", Toast.LENGTH_LONG).show();
+//            } else {
+//
+//                ActivityCompat.requestPermissions(this, new String[]{ Manifest.permission.CAMERA }, REQUEST_CODE_ASK_PERMISSIONS);
+//                Toast.makeText(this, "Solicitando Permisos", Toast.LENGTH_LONG).show();
+//
+//            }
+//        }else{
+//            Toast.makeText(this, "Permiso ya otorgado", Toast.LENGTH_LONG).show();
+//        }
+//
+//    }
 
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        scannerView.stopCamera();
-    }
-
-    @RequiresApi(api = Build.VERSION_CODES.M)
-    private void checkPermission(){
-
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-
-            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CAMERA)) {
-                Toast.makeText(this, "Permiso negado anteriormente", Toast.LENGTH_LONG).show();
-            } else {
-
-                ActivityCompat.requestPermissions(this, new String[]{ Manifest.permission.CAMERA }, REQUEST_CODE_ASK_PERMISSIONS);
-                Toast.makeText(this, "Solicitando Permisos", Toast.LENGTH_LONG).show();
-
-            }
-        }else{
-            Toast.makeText(this, "Permiso ya otorgado", Toast.LENGTH_LONG).show();
-        }
-
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-
-        Toast.makeText(this, "OnRequestPermission", Toast.LENGTH_LONG).show();
-        switch (requestCode) {
-
-            case REQUEST_CODE_ASK_PERMISSIONS:
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    Toast.makeText(this, "Permiso concedido", Toast.LENGTH_LONG).show();
-                } else {
-                    Toast.makeText(this, "Permiso no concedido", Toast.LENGTH_SHORT).show();
-                }
-                return;
-        }
-    }
+//    @Override
+//    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+//
+//        Toast.makeText(this, "OnRequestPermission", Toast.LENGTH_LONG).show();
+//        switch (requestCode) {
+//
+//            case REQUEST_CODE_ASK_PERMISSIONS:
+//                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+//                    Toast.makeText(this, "Permiso concedido", Toast.LENGTH_LONG).show();
+//                } else {
+//                    Toast.makeText(this, "Permiso no concedido", Toast.LENGTH_SHORT).show();
+//                }
+//                return;
+//        }
+//    }
 
     private void crearUsuario(){
 
@@ -211,18 +212,18 @@ public class UserActivity extends AppCompatActivity implements ZXingScannerView.
         });
     }
 
-    private void escanearQR(){
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            checkPermission();
-        }
-
-        Log.i("Scanner", "Ejecutando");
-        scannerView = new ZXingScannerView(UserActivity.this);
-        setContentView(scannerView);
-        scannerView.setResultHandler(UserActivity.this);
-        scannerView.startCamera();
-    }
+//    private void escanearQR(){
+//
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//            checkPermission();
+//        }
+//
+//        Log.i("Scanner", "Ejecutando");
+//        scannerView = new ZXingScannerView(UserActivity.this);
+//        setContentView(scannerView);
+//        scannerView.setResultHandler(UserActivity.this);
+//        scannerView.startCamera();
+//    }
 
 
 }

@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
                 .build();
 
         //armar solicitud de API
-        Request request = new Request.Builder().url("http://192.168.1.66/api.phpbackend.com/v1/usuarios/login")
+        Request request = new Request.Builder().url("http://192.168.1.69/api.phpbackend.com/v1/usuarios/login")
                 .post(jsonBody)
                 .build();
 

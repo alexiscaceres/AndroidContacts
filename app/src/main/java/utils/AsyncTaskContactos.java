@@ -40,16 +40,11 @@ public class AsyncTaskContactos extends AsyncTask<Integer, Void, List<Contacto>>
         OkHttpClient cliente = new OkHttpClient();
         Gson gson = new Gson();
 
-        Integer idUsuario = params[0];
-//        Integer idContacto = params[1];
+        String url = "http://192.168.1.69/api.phpbackend.com/v1/contactos/" + params[0];
 
-        String url = "http://192.168.1.66/api.phpbackend.com/v1/contactos/";
-        if (idUsuario != null){
-            url = url + idUsuario;
+        if (activity instanceof ContactoActivity){
+            url = url + "," + params[1];
         }
-//        if (idContacto != null){
-//            url = url + "," +idContacto;
-//        }
 
         //armar solicitud de API
         Request request = new Request.Builder().url(url)

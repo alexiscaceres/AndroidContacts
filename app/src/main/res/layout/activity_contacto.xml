@@ -38,59 +38,73 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                    <EditText
-                        android:id="@+id/contactoET_telefono"
+                    <ScrollView
+                        android:id="@+id/contactoSV_datosCont"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:ems="10"
-                        android:inputType="phone"
-                        android:text="telefono" />
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
 
-                    <EditText
-                        android:id="@+id/contactoET_nombre"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:ems="10"
-                        android:inputType="textPersonName"
-                        android:text="nombre" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
 
-                    <EditText
-                        android:id="@+id/contactoET_correo"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:ems="10"
-                        android:inputType="textEmailAddress"
-                        android:text="Correo" />
+                            <EditText
+                                android:id="@+id/contactoET_correo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:ems="10"
+                                android:inputType="textEmailAddress"
+                                android:text="Correo" />
 
-                    <EditText
-                        android:id="@+id/contactoET_ciudad"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:ems="10"
-                        android:inputType="textPersonName"
-                        android:text="ciudad" />
+                            <EditText
+                                android:id="@+id/contactoET_telefono"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:ems="10"
+                                android:inputType="phone"
+                                android:text="telefono" />
 
-                    <EditText
-                        android:id="@+id/contactoET_ocupación"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:ems="10"
-                        android:inputType="textPersonName"
-                        android:text="Ocupación" />
+                            <EditText
+                                android:id="@+id/contactoET_nombre"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:ems="10"
+                                android:inputType="textPersonName"
+                                android:text="nombre" />
 
-                    <EditText
-                        android:id="@+id/contactoET_direccion"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:ems="10"
-                        android:inputType="textPostalAddress"
-                        android:text="direccion" />
+                            <EditText
+                                android:id="@+id/contactoET_direccion"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:ems="10"
+                                android:inputType="textPostalAddress"
+                                android:text="direccion" />
+
+                            <EditText
+                                android:id="@+id/contactoET_ciudad"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:ems="10"
+                                android:inputType="textPersonName"
+                                android:text="ciudad" />
+
+                            <EditText
+                                android:id="@+id/contactoET_ocupación"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:ems="10"
+                                android:inputType="textPersonName"
+                                android:text="Ocupación" />
+                        </LinearLayout>
+                    </ScrollView>
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -99,37 +113,56 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                    <EditText
-                        android:id="@+id/contactoET_lugar"
+                    <ScrollView
+                        android:id="@+id/contactoSV_datosRel"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:inputType="textPersonName"
-                        android:text="lugar" />
+                        android:layout_height="match_parent">
 
-                    <EditText
-                        android:id="@+id/contactoET_fecha"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:inputType="date"
-                        android:text="fecha" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
 
-                    <EditText
-                        android:id="@+id/contactoET_hora"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:inputType="time"
-                        android:text="hora" />
+                            <EditText
+                                android:id="@+id/contactoET_hora"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:ems="10"
+                                android:inputType="time"
+                                android:text="hora" />
 
-                    <EditText
-                        android:id="@+id/contactoET_descrip"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:inputType="textMultiLine"
-                        android:text="descripcion" />
+                            <EditText
+                                android:id="@+id/contactoET_fecha"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:ems="10"
+                                android:inputType="date"
+                                android:text="fecha" />
+
+                            <EditText
+                                android:id="@+id/contactoET_lugar"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:ems="10"
+                                android:inputType="textPersonName"
+                                android:text="lugar" />
+
+                            <EditText
+                                android:id="@+id/contactoET_descrip"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:ems="10"
+                                android:inputType="textMultiLine"
+                                android:text="descripcion" />
+
+                            <!--<com.google.android.gms.maps.MapView-->
+                                <!--android:id="@+id/contactoMV_lugar"-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="wrap_content" />-->
+
+                        </LinearLayout>
+                    </ScrollView>
+
                 </LinearLayout>
             </FrameLayout>
         </LinearLayout>
