@@ -29,6 +29,8 @@ import okhttp3.Response;
 
 public class AsyncTaskAPIGet extends AsyncTask<Integer, Void, List<Contacto>> {
 
+    private static Character ACTION_READ = 'R';
+    private static Character ACTION_CREATE = 'C';
     private final String API_RESOURCE_USUARIOS = "usuarios";
     private final String API_RESOURCE_CONTACTOS = "contactos";
 

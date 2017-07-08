@@ -72,7 +72,6 @@ public class MainActivity extends AppCompatActivity {
 
                 //ir a Activity de usuario
                 Intent toUserActivity = new Intent(MainActivity.this, UserActivity.class);
-                toUserActivity.putExtra("option", 'C');
                 startActivity(toUserActivity);
 
             }

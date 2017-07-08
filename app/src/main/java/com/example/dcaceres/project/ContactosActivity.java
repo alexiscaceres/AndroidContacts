@@ -31,7 +31,7 @@ public class ContactosActivity extends AppCompatActivity implements ZXingScanner
     private final int       REQUEST_CODE_ASK_PERMISSIONS = 10;
     private final Character ACTION_READ = 'R';
     private final Character ACTION_CREATE = 'C';
-    private final String API_RESOURCE_CONTACTOS = "contactos";
+    private final String    API_RESOURCE_CONTACTOS = "contactos";
 
     private ListView listaContactos;
     private Button agregarContacto;
