@@ -50,6 +50,15 @@
                             android:orientation="vertical">
 
                             <EditText
+                                android:id="@+id/contactoET_nombre"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:ems="10"
+                                android:inputType="textPersonName"
+                                android:text="nombre" />
+
+                            <EditText
                                 android:id="@+id/contactoET_correo"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -66,15 +75,6 @@
                                 android:ems="10"
                                 android:inputType="phone"
                                 android:text="telefono" />
-
-                            <EditText
-                                android:id="@+id/contactoET_nombre"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:ems="10"
-                                android:inputType="textPersonName"
-                                android:text="nombre" />
 
                             <EditText
                                 android:id="@+id/contactoET_direccion"
@@ -168,5 +168,11 @@
         </LinearLayout>
     </TabHost>
 
-    </LinearLayout>
+    <Button
+        android:id="@+id/contactoBT_guardar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Guardar" />
+
+</LinearLayout>
 <!--</android.support.constraint.ConstraintLayout>-->

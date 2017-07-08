@@ -24,13 +24,14 @@ import java.util.List;
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 import model.Contacto;
 import utils.AdapterContacto;
-import utils.AsyncTaskContactos;
+import utils.AsyncTaskAPIGet;
 
 public class ContactosActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler {
 
     private final int       REQUEST_CODE_ASK_PERMISSIONS = 10;
     private final Character ACTION_READ = 'R';
     private final Character ACTION_CREATE = 'C';
+    private final String API_RESOURCE_CONTACTOS = "contactos";
 
     private ListView listaContactos;
     private Button agregarContacto;
@@ -80,8 +81,13 @@ public class ContactosActivity extends AppCompatActivity implements ZXingScanner
     }
 
     public void setAdapterContactos(){
-        AdapterContacto adapter = new AdapterContacto(ContactosActivity.this, contactos);
-        listaContactos.setAdapter(adapter);
+
+        if (contactos != null ){
+
+            AdapterContacto adapter = new AdapterContacto(ContactosActivity.this, contactos);
+            listaContactos.setAdapter(adapter);
+
+        }
     }
 
     private void requestApiGetContacts(Integer idUsuario){
@@ -91,7 +97,7 @@ public class ContactosActivity extends AppCompatActivity implements ZXingScanner
             contactos.clear();
         }
 
-        new AsyncTaskContactos(this).execute(idUsuario);
+        new AsyncTaskAPIGet(this, API_RESOURCE_CONTACTOS).execute(idUsuario);
     }
 
     private void escanearQR(){
@@ -149,7 +155,10 @@ public class ContactosActivity extends AppCompatActivity implements ZXingScanner
     protected void onPause() {
 
         super.onPause();
-        scannerView.stopCamera();
+
+        if ( scannerView != null ){
+            scannerView.stopCamera();
+        }
 
     }
 

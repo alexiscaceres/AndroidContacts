@@ -13,10 +13,12 @@ import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
 
 import model.Contacto;
 import model.Contactos;
+import model.Usuario;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -25,25 +27,38 @@ import okhttp3.Response;
  * Created by doris on 3/07/2017.
  */
 
-public class AsyncTaskContactos extends AsyncTask<Integer, Void, List<Contacto>> {
+public class AsyncTaskAPIGet extends AsyncTask<Integer, Void, List<Contacto>> {
 
-    private List<Contacto> contactos;
+    private final String API_RESOURCE_USUARIOS = "usuarios";
+    private final String API_RESOURCE_CONTACTOS = "contactos";
+
     private AppCompatActivity activity;
+    private String resource;
 
-    public AsyncTaskContactos(AppCompatActivity activity){
+    public AsyncTaskAPIGet(AppCompatActivity activity, String resource){
         this.activity = activity;
+        this.resource = resource;
     }
 
     @Override
     protected List<Contacto> doInBackground(Integer... params) {
 
         OkHttpClient cliente = new OkHttpClient();
+        List<Contacto> contactos = new ArrayList<Contacto>();
         Gson gson = new Gson();
 
-        String url = "http://192.168.1.69/api.phpbackend.com/v1/contactos/" + params[0];
+        //String url = "http://192.168.1.69/api.phpbackend.com/v1/contactos/" + params[0];
+        String url = "http://192.168.1.69/api.phpbackend.com/v1/"+ resource + "/" + params[0];
 
         if (activity instanceof ContactoActivity){
-            url = url + "," + params[1];
+
+            try{
+
+                url = url + "," + params[1];
+
+            } catch (Exception exception){
+            }
+
         }
 
         //armar solicitud de API
@@ -54,14 +69,26 @@ public class AsyncTaskContactos extends AsyncTask<Integer, Void, List<Contacto>>
         try {
 
             Response response = cliente.newCall(request).execute();
-            ResponseContactos responseContactos = gson.fromJson( response.body().string(), ResponseContactos.class);
-            return responseContactos.getContactos();
+
+            switch (resource){
+                case API_RESOURCE_CONTACTOS:
+                    ResponseContactos responseContactos = gson.fromJson( response.body().string(), ResponseContactos.class);
+                    contactos = responseContactos.getContactos();
+                    break;
+
+                case  API_RESOURCE_USUARIOS:
+                    ResponseUsuario responseUsuario = gson.fromJson( response.body().string(), ResponseUsuario.class);
+                    Contacto contacto = new Contacto( responseUsuario.getUsuario() );
+                    contactos.add(contacto);
+                    break;
+            }
 
         } catch (Exception e){
             Log.i("Request", "Excepción " + e.getMessage());
             e.printStackTrace();
         }
-        return  null;
+
+        return contactos;
     }
 
     @Override
